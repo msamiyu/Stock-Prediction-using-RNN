@@ -13,3 +13,14 @@ One of the most challenging tasks is predicting the stock price. This is because
 ## Data Collection /Preparation
 The data used for this work is the JP Morgan Chase and Co Inc. stock prices from 2010 through June 2019;  obtained through the yahoo finance data source which was filtered based on our months/years of preference. The link for the data is; https://finance.yahoo.com/quote/JPM/history?period1=1262325600&period2=1561870800&interval=1d&filter=history&frequency=1d
 
+## Generate Features
+
+We only considered the “Adjusted Close” column of the stock price data (nearly exactly the same as the “close” column). For a better model fit and very fast prediction with a lot of data, the features are normalized using the minMaxScaler function. With this, we are able to scale all the values between 0 and 1.
+
+## Generate ML Model
+
+In this part, the ML model we considered is the Recurrent Neural Network (RNN). We defined a sequential (linear stack of layers) tensorflow model and add the predefined layers in order to build the RNN model. The Tensorflow library is used to simplify this prediction. We have a total of 20 layers. These includes the sequential, LSTM (Long Term Short Memory), Drop-out and the Dense layer.
+
+## Train the Model
+
+This is the part where our dataset is being transformed. This simply means transforming our trained dataset into tensor data. After creating the tensor, we reshape our feature data into [x_train, (x_train.shape[0], x_train.shape[1], 1) ] as shown in the line of the code. Then, our tensor is now used with the model in the RNN. For the compilation, we set up the optimizer by using the “adam” since we want our learning rate to for each weight unlike the SGD (Stochastic Gradient Descent) whose learning rate is always the same for all weights. We also set up our loss function to be “meanSquaredError” and the metrics as “accuracy”. For the fitting, we call fit function on the tensorflow model and send the x-train (features) and y-train (response) sets. We set up our “epochs” as 200 (for accuracy and underfitting). After the training, it returns the result, then the model is set for making future predictions. It should be noted that: we decide to train the first 2000 datapoints of our data set and then, based our test on the remaining datapoints.
