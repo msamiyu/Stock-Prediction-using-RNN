@@ -32,4 +32,5 @@ In this part, we try to visualize how well our model fits the training sets by c
 ## Result
 
 ![image](https://user-images.githubusercontent.com/54149747/109923019-d3bef800-7c83-11eb-9ffb-08d076d248a9.png)
+
 From the result above, the red line shows the actual price while the blue line represents our predicted values. We observed that both are very close (approximately the same).
