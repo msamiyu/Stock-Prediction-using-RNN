@@ -2,6 +2,7 @@
 ## Overview
 
 In this work, we carry out a mix of machine learning algorithms to predict the future price of stock. This project predicts the stock price of the JP Morgan Chase and Co. Inc based on the stock price datasets from 2010 to June, 2019. The profit or loss calculation is determined by the closing price of a stock for the day. The adjusted closed price (almost exactly the same as the stock price) is used for this project. The method used is the Recurrent Neural Network (RNN) with the tensorflow in python script.
+
 ![image](https://user-images.githubusercontent.com/54149747/109921635-cc96ea80-7c81-11eb-8e5e-06900296cd2e.png)
 
 
