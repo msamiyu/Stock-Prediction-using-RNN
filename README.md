@@ -24,3 +24,11 @@ In this part, the ML model we considered is the Recurrent Neural Network (RNN). 
 ## Train the Model
 
 This is the part where our dataset is being transformed. This simply means transforming our trained dataset into tensor data. After creating the tensor, we reshape our feature data into [x_train, (x_train.shape[0], x_train.shape[1], 1) ] as shown in the line of the code. Then, our tensor is now used with the model in the RNN. For the compilation, we set up the optimizer by using the “adam” since we want our learning rate to for each weight unlike the SGD (Stochastic Gradient Descent) whose learning rate is always the same for all weights. We also set up our loss function to be “meanSquaredError” and the metrics as “accuracy”. For the fitting, we call fit function on the tensorflow model and send the x-train (features) and y-train (response) sets. We set up our “epochs” as 200 (for accuracy and underfitting). After the training, it returns the result, then the model is set for making future predictions. It should be noted that: we decide to train the first 2000 datapoints of our data set and then, based our test on the remaining datapoints.
+
+## Test the Model
+
+In this part, we try to visualize how well our model fits the training sets by comparing both the actual and the predicted datasets. We use our model to predict on the same set that we train our data. This prediction is done by calling the prediction function. In other to get the real values of the feature, we run the “inverse min-max” by calling the minMaxInverseScaler function where we send the predicted data along with the min and max function.
+
+## Result
+
+![image](https://user-images.githubusercontent.com/54149747/109923019-d3bef800-7c83-11eb-9ffb-08d076d248a9.png)
